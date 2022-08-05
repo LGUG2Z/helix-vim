@@ -1,0 +1,74 @@
+[keys.normal]
+# Quick iteration on config changes
+C-o = ":config-open"
+C-r = ":config-reload"
+
+# Some nice Helix stuff
+C-h = "select_prev_sibling"
+C-j = "shrink_selection"
+C-k = "expand_selection"
+C-l = "select_next_sibling"
+
+# Personal preference
+o = ["open_below", "normal_mode"]
+O = ["open_above", "normal_mode"]
+
+# Muscle memory
+"{" = ["goto_prev_paragraph", "collapse_selection"]
+"}" = ["goto_next_paragraph", "collapse_selection"]
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+"%" = "match_brackets"
+V = ["select_mode", "extend_line"]
+C = ["collapse_selection", "extend_to_line_end", "change_selection"] # Requires https://github.com/helix-editor/helix/issues/2051#issuecomment-1140358950
+S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
+
+# Extend and select commands that expect a manual input can't be chained
+d = { d = ["extend_to_line_bounds", "delete_selection"], t = ["extend_till_char"], s = ["surround_delete"], i = ["select_textobject_inner"], a = ["select_textobject_around"] }
+
+# Would be nice to add ya and yi, but the surround commands can't be chained
+y = { y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection"] }
+
+# Clipboards over registers ye ye
+x = "delete_selection"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+
+# Uncanny valley stuff, this makes w and b behave as they do Vim
+w = ["move_next_word_start", "move_char_right", "collapse_selection"]
+b = ["move_prev_word_start", "collapse_selection"]
+
+# Escape the madness! No more fighting with the cursor!
+esc = ["collapse_selection"]
+
+[keys.select]
+# Muscle memory
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+0 = "goto_line_start"
+"$" = "goto_line_end"
+"^" = "goto_first_nonwhitespace"
+G = "goto_file_end"
+"%" = "match_brackets"
+# Basically 99% of what I use vim-surround for
+S = "surround_add"
+
+# Visual-mode specific muscle memory
+i = "select_textobject_inner"
+a = "select_textobject_around"
+x = "delete_selection"
+
+# Make selecting lines in visual mode behave sensibly
+k = ["extend_line_up", "extend_to_line_bounds"]
+j = ["extend_line_down", "extend_to_line_bounds"]
+
+# Clipboards over registers ye ye
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
+y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
+p = "replace_selections_with_clipboard" # No life without this
+P = "paste_clipboard_before"
+
+# Escape the madness! No more fighting with the cursor!
+esc = ["collapse_selection", "normal_mode"]
