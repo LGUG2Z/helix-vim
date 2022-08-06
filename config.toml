@@ -51,6 +51,7 @@ esc = ["collapse_selection"]
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
+"D" = ["extend_to_line_bounds", "delete_selection"]
 "%" = "match_brackets"
 # Basically 99% of what I use vim-surround for
 S = "surround_add"
