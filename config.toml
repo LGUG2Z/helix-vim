@@ -80,7 +80,7 @@ a = "select_textobject_around"
 x = "delete_selection"
 
 # Some extra binds to allow us to insert/append in select mode because it's nice with multiple cursors
-C-i = ["insert_mode", "collapse_selection"]
+tab = ["insert_mode", "collapse_selection"] # tab is read by most terminal editors as "C-i"
 C-a = ["append_mode", "collapse_selection"]
 
 # Make selecting lines in visual mode behave sensibly
