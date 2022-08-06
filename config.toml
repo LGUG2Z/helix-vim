@@ -20,6 +20,7 @@ O = ["open_above", "normal_mode"]
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
+"D" = ["extend_to_line_bounds", "delete_selection"]
 "%" = "match_brackets"
 V = ["select_mode", "extend_line"]
 C = ["collapse_selection", "extend_to_line_end", "change_selection"] # Requires https://github.com/helix-editor/helix/issues/2051#issuecomment-1140358950
@@ -51,6 +52,7 @@ esc = ["collapse_selection"]
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
+"D" = ["extend_to_line_bounds", "delete_selection"]
 "%" = "match_brackets"
 # Basically 99% of what I use vim-surround for
 S = "surround_add"
