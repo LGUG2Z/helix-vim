@@ -92,7 +92,7 @@ code before you compile it.
 
 [This](https://github.com/helix-editor/helix/issues/2051#issuecomment-1140358950)
 is the change you'll have to make to
-[this](https://github.com/helix-editor/helix/blob/master/helix-term/src/ui/editor.rs#L1208)
+[this](https://github.com/helix-editor/helix/blob/bf6f7042fef/helix-term/src/ui/editor.rs#L1207-L1211)
 block of code.
 
 After that, check out the `config.toml` file in this repository. It only
