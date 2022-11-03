@@ -86,16 +86,7 @@ you more than enough to get the ball rolling!
 
 ## Usage
 
-For this config to work _well_, you're gonna have to compile a pretty new
-version of Helix from source. And you're gonna have to make a change in the
-code before you compile it.
-
-[This](https://github.com/helix-editor/helix/issues/2051#issuecomment-1140358950)
-is the change you'll have to make to
-[this](https://github.com/helix-editor/helix/blob/bf6f7042fef/helix-term/src/ui/editor.rs#L1207-L1211)
-block of code.
-
-After that, check out the `config.toml` file in this repository. It only
+Check out the `config.toml` file in this repository. It only
 contains key mappings. These were the most important key mappings to allow me
 to use as much of my Vim muscle-memory as possible when editing text in Helix.
 

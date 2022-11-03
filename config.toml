@@ -22,7 +22,7 @@ O = ["open_above", "normal_mode"]
 G = "goto_file_end"
 "%" = "match_brackets"
 V = ["select_mode", "extend_to_line_bounds"]
-C = ["collapse_selection", "extend_to_line_end", "change_selection"] # Requires https://github.com/helix-editor/helix/issues/2051#issuecomment-1140358950
+C = ["collapse_selection", "extend_to_line_end", "change_selection"]
 D = ["extend_to_line_end", "delete_selection"]
 S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
 
@@ -50,8 +50,8 @@ b = ["move_prev_word_start", "collapse_selection"]
 # There is no real difference if you have overriden the commands bound to 'w', 'e' and 'b' like above
 # But if you really want to get familiar with the Helix way of selecting-while-moving, comment the
 # bindings for 'w', 'e', and 'b' out and leave the bindings for 'i' and 'a' active below. A world of difference!
-i = ["insert_mode", "collapse_selection"] # Requires https://github.com/helix-editor/helix/issues/2052#issuecomment-1140358950
-a = ["append_mode", "collapse_selection"] # Requires https://github.com/helix-editor/helix/issues/2052#issuecomment-1140358950
+i = ["insert_mode", "collapse_selection"]
+a = ["append_mode", "collapse_selection"]
 
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "keep_primary_selection"]
