@@ -47,7 +47,7 @@ b = ["move_prev_word_start", "collapse_selection"]
 # If you want to keep the selection-while-moving behaviour of Helix, this two lines will help a lot,
 # especially if you find having text remain selected while you have switched to insert or append mode
 #
-# There is no real difference if you have overriden the commands bound to 'w', 'e' and 'b' like above
+# There is no real difference if you have overridden the commands bound to 'w', 'e' and 'b' like above
 # But if you really want to get familiar with the Helix way of selecting-while-moving, comment the
 # bindings for 'w', 'e', and 'b' out and leave the bindings for 'i' and 'a' active below. A world of difference!
 i = ["insert_mode", "collapse_selection"]
