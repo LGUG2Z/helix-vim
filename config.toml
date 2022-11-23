@@ -14,6 +14,7 @@ o = ["open_below", "normal_mode"]
 O = ["open_above", "normal_mode"]
 
 # Muscle memory
+"{" = ["goto_prev_paragraph", "collapse_selection"]
 "}" = ["goto_next_paragraph", "collapse_selection"]
 0 = "goto_line_start"
 "$" = "goto_line_end"
