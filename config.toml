@@ -101,6 +101,8 @@ D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
 C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 "%" = "match_brackets"
 S = "surround_add" # Basically 99% of what I use vim-surround for
+u = ["switch_to_lowercase", "collapse_selection", "normal_mode"]
+U = ["switch_to_uppercase", "collapse_selection", "normal_mode"]
 
 # Visual-mode specific muscle memory
 i = "select_textobject_inner"
