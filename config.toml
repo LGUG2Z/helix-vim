@@ -22,8 +22,8 @@ O = ["open_above", "normal_mode"]
 G = "goto_file_end"
 "%" = "match_brackets"
 V = ["select_mode", "extend_to_line_bounds"]
-C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection", "insert_mode"]
-D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "delete_selection"]
+C = ["extend_to_line_end", "yank_main_selection_to_clipboard", "flip_selections", "change_selection"]
+D = ["extend_to_line_end", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
 S = "surround_add" # Would be nice to be able to do something after this but it isn't chainable
 
 # Clipboards over registers ye ye
@@ -31,7 +31,7 @@ x = "delete_selection"
 p = ["paste_clipboard_after", "collapse_selection"]
 P = ["paste_clipboard_before", "collapse_selection"]
 # Would be nice to add ya and yi, but the surround commands can't be chained
-Y = ["extend_to_line_end", "yank_main_selection_to_clipboard", "collapse_selection"]
+Y = ["extend_to_line_end", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection"]
 
 # Uncanny valley stuff, this makes w and b behave as they do Vim
 w = ["move_next_word_start", "move_char_right", "collapse_selection"]
@@ -68,34 +68,35 @@ k = "move_line_up"
 # I've kept d[X] commands here because it's better to at least have the stuff you want to delete
 # selected so that it's just a keystroke away to delete
 [keys.normal.d]
-d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection"]
+d = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
 t = ["extend_till_char"]
 s = ["surround_delete"]
 i = ["select_textobject_inner"]
 a = ["select_textobject_around"]
-j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
-w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection", "normal_mode"]
+up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection", "normal_mode"]
+G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection", "normal_mode"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
+W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
 g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
 
 [keys.normal.y]
-y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "collapse_selection"]
-j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+y = ["save_selection", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "normal_mode", "jump_backward", "collapse_selection"]
+j = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
+down = ["select_mode", "extend_to_line_bounds", "extend_line_below", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
+k = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
+up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
+G = ["save_selection", "select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "jump_backward", "jump_backward", "collapse_selection", "normal_mode"]
+w = ["move_next_word_start", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
+W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "flip_selections", "collapse_selection", "normal_mode"]
 g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"] }
 
 [keys.insert]
 # Escape the madness! No more fighting with the cursor! Or with multiple cursors!
 esc = ["collapse_selection", "normal_mode"]
+"C-[" = ["collapse_selection", "normal_mode"]
 
 [keys.select]
 # Muscle memory
@@ -105,7 +106,7 @@ esc = ["collapse_selection", "normal_mode"]
 "$" = "goto_line_end"
 "^" = "goto_first_nonwhitespace"
 G = "goto_file_end"
-D = ["extend_to_line_bounds", "delete_selection", "normal_mode"]
+D = ["goto_line_start", "extend_to_line_bounds", "delete_selection", "normal_mode"]
 C = ["goto_line_start", "extend_to_line_bounds", "change_selection"]
 "%" = "match_brackets"
 S = "surround_add" # Basically 99% of what I use vim-surround for
@@ -125,8 +126,8 @@ k = ["extend_line_up", "extend_to_line_bounds"]
 j = ["extend_line_down", "extend_to_line_bounds"]
 
 # Clipboards over registers ye ye
-d = ["yank_main_selection_to_clipboard", "delete_selection"]
-x = ["yank_main_selection_to_clipboard", "delete_selection"]
+d = ["yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
+x = ["yank_main_selection_to_clipboard", "flip_selections", "delete_selection"]
 y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
 Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
 p = "replace_selections_with_clipboard" # No life without this
