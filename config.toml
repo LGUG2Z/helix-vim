@@ -72,8 +72,8 @@ up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_se
 G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"]
 w = ["move_next_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
 W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-w = ["move_prev_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
-W = ["move_prev_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+b  = ["move_prev_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
+B = ["move_prev_long_word_start", "yank_main_selection_to_clipboard", "delete_selection"]
 e = ["move_next_word_end", "yank_main_selection_to_clipboard", "delete_selection"]
 E = ["move_next_long_word_end", "yank_main_selection_to_clipboard", "delete_selection"]
 g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "delete_selection", "normal_mode"] }
@@ -87,8 +87,8 @@ up = ["select_mode", "extend_to_line_bounds", "extend_line_above", "yank_main_se
 G = ["select_mode", "extend_to_line_bounds", "goto_last_line", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 w = ["move_next_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 W = ["move_next_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-w = ["move_prev_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
-W = ["move_prev_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+b = ["move_prev_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
+B  = ["move_prev_long_word_start", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 e = ["move_next_word_end", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 E = ["move_next_long_word_end", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"]
 g = { g = ["select_mode", "extend_to_line_bounds", "goto_file_start", "extend_to_line_bounds", "yank_main_selection_to_clipboard", "collapse_selection", "normal_mode"] }
