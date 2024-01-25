@@ -57,8 +57,8 @@ u = ["undo", "collapse_selection"]
 esc = ["collapse_selection", "keep_primary_selection"]
 
 # Search for word under cursor
-"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
-"#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_prev"]
+"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "make_search_word_bounded", "search_next"]
+"#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "make_search_word_bounded", "search_prev"]
 
 # Make j and k behave as they do Vim when soft-wrap is enabled
 j = "move_line_down"
